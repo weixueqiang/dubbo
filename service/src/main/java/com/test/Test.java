@@ -2,11 +2,13 @@ package com.test;
 
 import java.io.IOException;
 
+import org.apache.zookeeper.ZooKeeper;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Test {
     public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:springmvc.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:springmvc.xml"
+        		,"classpath:springjob.xml");
         context.start();
 
         System.out.println("Dubbo provider start...");
